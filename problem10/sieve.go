@@ -27,7 +27,7 @@ func sieveOfEratothenes(n int) {
 		p++
 	}
 	//Iterate over prime slice and if the value is true, then print the index
-	var sum int
+	sum := 0
 	for i := 2; i < len(prime); i++ {
 		if prime[i] {
 			sum += i
