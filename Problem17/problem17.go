@@ -57,11 +57,19 @@ func processNumbersLargerThanTwenty(num int) int {
 	for n > 0 {
 		switch i {
 		case 0:
-			x := units[n%10]
-			sum += len(x)
+			if num%100 < 10 || num%100 > 20 {
+				x := units[n%10]
+				sum += len(x)
+			}
+
 		case 1:
-			x := tens[n%10]
-			sum += len(x)
+			if num%100 > 10 && num%100 < 20 {
+				x := teens[num%10]
+				sum += len(x)
+			} else {
+				x := tens[n%10]
+				sum += len(x)
+			}
 		case 2:
 			x := units[n%10]
 			sum += len(x)

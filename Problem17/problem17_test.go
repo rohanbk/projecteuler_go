@@ -110,4 +110,11 @@ func TestProcessNumbersLargerThanTwenty(t *testing.T) {
 	if actualResult != expectedResult {
 		t.Fatalf("115: Expected %d but got %d", expectedResult, actualResult)
 	}
+
+	//the word 'onehundredten'(110) is 13 characters long
+	actualResult = processNumbersLargerThanTwenty(110)
+	expectedResult = 13
+	if actualResult != expectedResult {
+		t.Fatalf("110: Expected %d but got %d", expectedResult, actualResult)
+	}
 }
