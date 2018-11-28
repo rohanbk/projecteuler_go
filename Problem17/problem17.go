@@ -45,6 +45,7 @@ func processNumbersInTeens(n int) int {
 	return len(teens[n%10])
 }
 
+//TODO fix issue where it's not processing numbers in the teens properly (e.g. 115 fails to process)
 func processNumbersLargerThanTwenty(num int) int {
 	sum := 0
 	i := 0
