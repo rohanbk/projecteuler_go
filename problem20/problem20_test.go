@@ -1,35 +1,39 @@
 package main
 
-import "testing"
+import (
+	"math/big"
+	"testing"
+)
 
 //TestFactorial test recursive factorial function
 func TestFactorial(t *testing.T) {
-	actualResult := factorial(10)
-	expectedResult := 3628800
+	actualResult := factorial(big.NewInt(10))
+	expectedResult := big.NewInt(3628800)
 
-	if actualResult != expectedResult {
+	if actualResult.Cmp(expectedResult) != 0 {
 		t.Fatalf("Expected %d but got %d", expectedResult, actualResult)
 	}
 
-	actualResult = factorial(1)
-	expectedResult = 1
+	actualResult = factorial(big.NewInt(1))
+	expectedResult = big.NewInt(1)
 
-	if actualResult != expectedResult {
+	if actualResult.Cmp(expectedResult) != 0 {
 		t.Fatalf("Expected %d but got %d", expectedResult, actualResult)
 	}
 
-	actualResult = factorial(5)
-	expectedResult = 120
+	actualResult = factorial(big.NewInt(5))
+	expectedResult = big.NewInt(120)
 
-	if actualResult != expectedResult {
+	if actualResult.Cmp(expectedResult) != 0 {
 		t.Fatalf("Expected %d but got %d", expectedResult, actualResult)
 	}
 }
 
 func TestSum(t *testing.T) {
-	actualResult := sumDigitsInNum(3628800)
-	expectedResult := 27
-	if actualResult != expectedResult {
+	actualResult := sumDigitsInNum(big.NewInt(3628800))
+	expectedResult := big.NewInt(27)
+
+	if actualResult.Cmp(expectedResult) != 0 {
 		t.Fatalf("Expected %d but got %d", expectedResult, actualResult)
 	}
 }
